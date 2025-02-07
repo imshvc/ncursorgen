@@ -1,0 +1,20 @@
+# platform specific
+Thumbs.db
+ehthumbs.db
+.DS_Store
+desktop.ini
+
+# editor files
+*.sublime-project
+*.sublime-workspace
+*.komodoproject
+
+# editor directories
+.vscode
+.idea
+
+# build output
+bin/
+rel/
+debug/
+release/
