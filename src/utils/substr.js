@@ -2,8 +2,8 @@
 
 /**
  * Return part of a string
- * @param {string} string 
- * @param {number} offset 
+ * @param {string} string
+ * @param {number} offset
  * @param {number} length Length of the returned string
  * @returns {string}
  */

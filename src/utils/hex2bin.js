@@ -28,7 +28,7 @@ function hex2bin(hex = null) {
     if (!(ord > 47 && ord < 58 || ord > 96 && ord < 103)) {
       throw new Exception('Input string must be hexadecimal')
     }
-    
+
     // Everything is fine, continue ...
     output += String.fromCharCode(parseInt(hex.substr(i, 2), 16))
   }

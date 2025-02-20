@@ -24,5 +24,5 @@ var DataTypes = {
   /**
    * TODO: Data types for X11 Cursor
    */
-  X11: null,
+  Xcursor: null,
 };
