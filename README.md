@@ -22,3 +22,4 @@ An alternative to xcursorgen - build cursors for Linux and Windows platforms.
 14. https://upload.wikimedia.org/wikipedia/commons/7/75/BMPfileFormat.svg
 15. https://www.fileformat.info/format/bmp/index.dir
 16. https://www.fileformat.info/format/bmp/egff.htm
+17. https://gitlab.freedesktop.org/xorg/lib/libxcursor

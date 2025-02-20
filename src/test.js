@@ -44,6 +44,8 @@ loadSample('16-bit.bmp', '../samples/bmp/16-bit.bmp');
 loadSample('24-bit.bmp', '../samples/bmp/24-bit.bmp');
 loadSample('32-bit.bmp', '../samples/bmp/32-bit.bmp');
 loadSample('256-colors.bmp', '../samples/bmp/256-colors.bmp');
+loadSample('stripe-test-24-bit.bmp', '../samples/bmp/stripe-test-24-bit.bmp');
+loadSample('stripe-test-32-bit.bmp', '../samples/bmp/stripe-test-32-bit.bmp');
 
 /**
  * Execute tasks when no XHR connections are left.
