@@ -40,7 +40,7 @@ class BMPParser {
    * @type {number}
    */
   BitmapFileHeaderStructureSize = 14;
-  
+
   /**
    * Bitmap File Header Structure (BITMAPFILEHEADER).
    * @public
@@ -229,19 +229,6 @@ class BMPParser {
       offset += field.size;
     }
 
-    /**
-     * Process: Icon Directory Entry Structures.
-     */
-    // for (let entryIndex = 0; entryIndex < result.Fields.NumberOfEntries; entryIndex++) {
-    //   result.Entries[entryIndex] = {};
-
-    //   for (let field of this.IconDirectoryEntryStructure) {
-    //     let data = substr(bytes, offset, field.size);
-    //     result.Entries[entryIndex][field.name] = hexdec(hexreverse(bin2hex(data)));
-    //     offset += field.size;
-    //   }
-    // }
-
     return result;
   }
 }
@@ -254,7 +241,6 @@ class BMPParserResult {
   InfoHeader = {};
   ColorTable = {};
   ImageData = {};
-  // Info = {};
 
   /**
    * Returns JSON stringified result.
@@ -286,6 +272,4 @@ class BMPParserResult {
       }
     }
   }
-
-  valid() {}
 }
