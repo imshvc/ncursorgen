@@ -126,9 +126,17 @@ class CURParserResult {
   Fields = {};
 
   /**
+   * Returns JSON stringified result.
+   * @returns {string} JSON
+   */
+  json() {
+    return JSON.stringify(this);
+  }
+
+  /**
    * Log structure information to developer console.
    */
-  toConsole() {
+  log() {
     console.log(`Fields:`);
 
     for (let field of Object.keys(this.Fields)) {
@@ -141,7 +149,7 @@ class CURParserResult {
       console.log(`  Entry ${entryIndex}:`);
 
       let entry = this.Entries[entryIndex];
-    
+
       for (let field of Object.keys(entry)) {
         console.log(`    ${field} = ${entry[field]}`);
       }
