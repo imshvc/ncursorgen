@@ -17,11 +17,12 @@ var DataTypes = {
   Windows: {
     BYTE: 1,
     WORD: 2,
-    DWORD: 4
+    DWORD: 4,
+    LONG: 4,
   },
 
   /**
    * TODO: Data types for X11 Cursor
    */
-  X11: null
+  X11: null,
 };
