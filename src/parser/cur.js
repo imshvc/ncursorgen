@@ -87,34 +87,33 @@ class CURParser {
    * @param {string} string Raw file bytes.
    * @returns {CURParserResult}
    */
-  fromBytes(string) {
-    let cursorData = string;
-    let cursorResult = new CURParserResult();
+  parse(bytes) {
+    let result = new CURParserResult();
     let offset = 0;
 
     /**
      * Process: Icon Directory Structure.
      */
     for (let field of this.IconDirectoryStructure) {
-      let data = substr(cursorData, offset, field.size);
-      cursorResult.Fields[field.name] = hexdec(hexreverse(bin2hex(data)));
+      let data = substr(bytes, offset, field.size);
+      result.Fields[field.name] = hexdec(hexreverse(bin2hex(data)));
       offset += field.size;
     }
 
     /**
      * Process: Icon Directory Entry Structures.
      */
-    for (let entryIndex = 0; entryIndex < cursorResult.Fields.NumberOfEntries; entryIndex++) {
-      cursorResult.Entries[entryIndex] = {};
+    for (let entryIndex = 0; entryIndex < result.Fields.NumberOfEntries; entryIndex++) {
+      result.Entries[entryIndex] = {};
 
       for (let field of this.IconDirectoryEntryStructure) {
-        let data = substr(cursorData, offset, field.size);
-        cursorResult.Entries[entryIndex][field.name] = hexdec(hexreverse(bin2hex(data)));
+        let data = substr(bytes, offset, field.size);
+        result.Entries[entryIndex][field.name] = hexdec(hexreverse(bin2hex(data)));
         offset += field.size;
       }
     }
 
-    return cursorResult;
+    return result;
   }
 }
 
