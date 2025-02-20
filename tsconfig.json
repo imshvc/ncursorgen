@@ -1,0 +1,10 @@
+{
+  "compileOnSave": false,
+  "include": ["src/**/*"],
+  "compilerOptions": {
+    "outDir": "./build",
+    "baseUrl": "./src",
+    "allowJs": true,
+    "sourceMap": false
+  }
+}
