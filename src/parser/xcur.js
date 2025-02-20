@@ -5,6 +5,7 @@
  * @author Nurudin Imsirovic <realnurudinimsirovic@gmail.com>
  */
 
-class XCURParser {
-  // TODO
-}
+/**
+ * TODO: XCUR file parser.
+ */
+class XCURParser {}

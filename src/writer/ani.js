@@ -5,6 +5,7 @@
  * @author Nurudin Imsirovic <realnurudinimsirovic@gmail.com>
  */
 
-class ANIWriter {
-  // TODO
-}
+/**
+ * TODO: ANI file writer.
+ */
+class ANIWriter {}

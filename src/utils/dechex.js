@@ -1,4 +1,4 @@
-// src/utils/dechex.js
+// file: src/utils/dechex.js
 
 /**
  * Decimal to hexadecimal

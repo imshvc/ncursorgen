@@ -5,6 +5,7 @@
  * @author Nurudin Imsirovic <realnurudinimsirovic@gmail.com>
  */
 
-class CURWriter {
-  // TODO
-}
+/**
+ * TODO: CUR file writer.
+ */
+class CURWriter {}

@@ -5,6 +5,7 @@
  * @author Nurudin Imsirovic <realnurudinimsirovic@gmail.com>
  */
 
-class ANIParser {
-  // TODO
-}
+/**
+ * TODO: ANI file parser.
+ */
+class ANIParser {}

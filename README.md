@@ -12,3 +12,5 @@ An alternative to xcursorgen - build cursors for Linux and Windows platforms.
 4. https://github.com/retorillo/icokit/tree/master/
 5. https://github.com/retorillo/icokit/blob/master/icondir.h
 6. https://learn.microsoft.com/en-us/windows/win32/winprog/windows-data-types
+7. https://learn.microsoft.com/en-us/windows/win32/api/wingdi/ns-wingdi-bitmapinfoheader
+8. https://learn.microsoft.com/en-us/previous-versions/dd183376(v=vs.85)

@@ -5,6 +5,7 @@
  * @author Nurudin Imsirovic <realnurudinimsirovic@gmail.com>
  */
 
-class XCURWriter {
-  // TODO
-}
+/**
+ * TODO: XCUR file writer.
+ */
+class XCURWriter {}

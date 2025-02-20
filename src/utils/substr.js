@@ -5,7 +5,7 @@
  * @param {string} string 
  * @param {number} offset 
  * @param {number} length Length of the returned string
- * @returns 
+ * @returns {string}
  */
 function substr(string, offset, length = -1) {
   // handle case: length not specified

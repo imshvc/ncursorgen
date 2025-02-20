@@ -1,4 +1,4 @@
-// src/utils/bin2hex.js
+// file: src/utils/bin2hex.js
 
 /**
  * Convert binary data into hexadecimal representation.
