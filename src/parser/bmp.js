@@ -76,22 +76,16 @@ class BmpParserResult {
    * Log structure information to developer console.
    */
   log() {
-    console.log(`Fields:`);
+    console.log(`File Header:`);
 
-    for (let field of Object.keys(this.Fields)) {
-      console.log(`  ${field} = ${this.Fields[field]}`);
+    for (let field of Object.keys(this.FileHeader)) {
+      console.log(`  ${field} = ${this.FileHeader[field]}`);
     }
 
-    console.log(`\nEntries:`);
+    console.log(`\nInfoHeader:`);
 
-    for (let entryIndex = 0; entryIndex < this.Fields.NumberOfEntries; entryIndex++) {
-      console.log(`  Entry ${entryIndex}:`);
-
-      let entry = this.Entries[entryIndex];
-
-      for (let field of Object.keys(entry)) {
-        console.log(`    ${field} = ${entry[field]}`);
-      }
+    for (let field of Object.keys(this.InfoHeader)) {
+      console.log(`  ${field} = ${this.InfoHeader[field]}`);
     }
   }
 }
