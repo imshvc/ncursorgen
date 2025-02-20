@@ -1,11 +1,11 @@
 // file: src/writer/cur.js
 
 /**
- * @file Windows Static Cursor Writer
+ * @file Windows Static Cursor Writer.
  * @author Nurudin Imsirovic <realnurudinimsirovic@gmail.com>
  */
 
 /**
- * TODO: CUR file writer.
+ * TODO: Windows Static Cursor Writer.
  */
-class CURWriter {}
+class CurWriter {}

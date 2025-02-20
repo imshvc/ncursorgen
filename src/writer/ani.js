@@ -1,11 +1,11 @@
 // file: src/writer/ani.js
 
 /**
- * @file Windows Animated Cursor Writer
+ * @file Windows Animated Cursor Writer.
  * @author Nurudin Imsirovic <realnurudinimsirovic@gmail.com>
  */
 
 /**
- * TODO: ANI file writer.
+ * TODO: Windows Animated Cursor Writer.
  */
-class ANIWriter {}
+class AniWriter {}

@@ -1,11 +1,11 @@
 // file: src/writer/xcur.js
 
 /**
- * @file X11 Cursor Writer
+ * @file X11 Cursor Writer.
  * @author Nurudin Imsirovic <realnurudinimsirovic@gmail.com>
  */
 
 /**
- * TODO: XCUR file writer.
+ * TODO: X11 Cursor Writer.
  */
-class XCURWriter {}
+class XcurWriter {}

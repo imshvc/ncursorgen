@@ -1,8 +1,10 @@
 // file: src/test.js
 
 let samples = {};
-let curParser = new CURParser();
-let bmpParser = new BMPParser();
+let curParser = new CurParser();
+let bmpParser = new BmpParser();
+let aniParser = new AniParser();
+let xcurParser = new XcurParser();
 let textDecoder = new TextDecoder();
 let xhrConnections = 0;
 
