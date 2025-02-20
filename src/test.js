@@ -51,5 +51,12 @@ let executeTasks = setInterval(function() {
 
   parsedCursors['static-cursor-32x32-3-frames.cur'] = curParser.fromBytes(cursors['static-cursor-32x32-3-frames.cur']);
   window.result = parsedCursors['static-cursor-32x32-3-frames.cur'];
+
   console.log(result);
+  
+  if (result.valid()) {
+    result.log();
+  } else {
+    console.log('Loaded cursor is invalid: ' + result.Fields.ImageType)
+  }
 }, 33);

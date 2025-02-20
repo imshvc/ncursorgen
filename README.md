@@ -14,3 +14,6 @@ An alternative to xcursorgen - build cursors for Linux and Windows platforms.
 6. https://learn.microsoft.com/en-us/windows/win32/winprog/windows-data-types
 7. https://learn.microsoft.com/en-us/windows/win32/api/wingdi/ns-wingdi-bitmapinfoheader
 8. https://learn.microsoft.com/en-us/previous-versions/dd183376(v=vs.85)
+9. https://github.com/quantum5/win2xcur/tree/master
+10. https://github.com/meanvoid/cursorgen/tree/master
+11. https://gitlab.freedesktop.org/xorg/app/xcursorgen/tree/master
