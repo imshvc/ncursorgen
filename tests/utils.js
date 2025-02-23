@@ -4,7 +4,7 @@ let loadedFiles = {};
 let xhrConnections = 0;
 
 /**
- * Load file as raw bytes.
+ * Load file as raw bytes (ArrayBuffer).
  * @param {string} name
  * @param {string} path
  * @throws if either argument is null.
@@ -26,7 +26,7 @@ function loadFile(name = null, path = null) {
   xhr.onload = function(e) {
     if (xhr.readyState === 4) {
       if (xhr.status === 200) {
-        loadedFiles[name] = new DataViewExt(xhr.response);
+        loadedFiles[name] = xhr.response;
         --xhrConnections;
       }
     }

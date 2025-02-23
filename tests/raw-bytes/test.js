@@ -1,10 +1,5 @@
-// file: tests/bmp-parser/test.js
+// file: tests/raw-bytes/test.js
 
-let bmpParser = new BmpParser();
-
-// loadFile('1-bit.bmp', '../../samples/bmp/2-bit.bmp');
-// loadFile('16-bit.bmp', '../../samples/bmp/16-bit.bmp');
-loadFile('24-bit.bmp', '../../samples/bmp/24-bit.bmp');
 loadFile('32-bit.bmp', '../../samples/bmp/32-bit.bmp');
 
 let parsedBmp24 = null;
@@ -33,7 +28,5 @@ let executeTest = setInterval(() => {
 
   clearInterval(executeTest);
 
-  // test code
-  parseBmp24();
-  // parseBmp32();
+  console.log(loadedFiles['32-bit.bmp']);
 }, 100);

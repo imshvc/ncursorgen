@@ -11,11 +11,16 @@
 class BmpParser {
   /**
    * Parse bitmap.
-   * @param {DataViewExt} dataView Raw file bytes.
+   * @param {ArrayBuffer} data Raw file bytes.
+   * @throws If data is not an ArrayBuffer.
    * @returns {BmpParserResult}
    */
-  parse(dataView) {
-    dataView.littleEndian();
+  parse(arrayBuffer = null) {
+    if (arrayBuffer instanceof ArrayBuffer === false) {
+      throw new TypeError('Data is not an ArrayBuffer.');
+    }
+
+    let dataView = new DataView(arrayBuffer);
 
     /**
      * Not a bitmap file.
@@ -31,7 +36,7 @@ class BmpParser {
      * Parse file header.
      */
     for (let field of BmpStructure.FileHeader) {
-      result.FileHeader[field.name] = dataView.read(offset, field.type);
+      result.FileHeader[field.name] = field.read(dataView, offset);
       offset += field.size;
     }
 
@@ -39,7 +44,7 @@ class BmpParser {
      * Parse info header.
      */
     for (let field of BmpStructure.InfoHeader) {
-      result.InfoHeader[field.name] = dataView.read(offset, field.type);
+      result.InfoHeader[field.name] = field.read(dataView, offset);
       offset += field.size;
     }
 
@@ -52,7 +57,7 @@ class BmpParser {
    * @returns {boolean}
    */
   valid(dataView) {
-    return dataView.read(0, 'Uint16') === 0x4D42;
+    return dataView.getInt16(0, true) === 0x4D42;
   }
 }
 
