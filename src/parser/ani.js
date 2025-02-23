@@ -6,6 +6,11 @@
  */
 
 /**
- * TODO: ANI file parser.
+ * TODO: Windows Animated Cursor Parser.
  */
 class AniParser {}
+
+/**
+ * TODO: Result from the AniParser.
+ */
+class AniParserResult {}

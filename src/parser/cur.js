@@ -1,20 +1,22 @@
 // file: src/parser/cur.js
 
 /**
- * @file Windows Static Cursor Parser
+ * @file Windows Static Cursor Parser.
  * @author Nurudin Imsirovic <realnurudinimsirovic@gmail.com>
  */
 
 /**
- * CUR file parser.
+ * Windows Static Cursor Parser.
  */
 class CurParser {
   /**
-   * Parse cursor from bytes.
-   * @param {string} string Raw file bytes.
+   * Parse cursor.
+   * @param {DataViewExt} dataView Raw file bytes.
    * @returns {CurParserResult}
    */
-  parse(bytes) {
+  parse(dataView) {
+    dataView.littleEndian();
+
     let result = new CurParserResult();
     let offset = 0;
 
@@ -22,8 +24,7 @@ class CurParser {
      * Process: Icon Directory Structure.
      */
     for (let field of CurStructure.IconDirectory) {
-      let data = substr(bytes, offset, field.size);
-      result.Fields[field.name] = hexdec(hexreverse(bin2hex(data)));
+      result.Fields[field.name] = dataView.read(offset, field.type);
       offset += field.size;
     }
 
@@ -34,8 +35,7 @@ class CurParser {
       result.Entries[entryIndex] = {};
 
       for (let field of CurStructure.IconDirectoryEntry) {
-        let data = substr(bytes, offset, field.size);
-        result.Entries[entryIndex][field.name] = hexdec(hexreverse(bin2hex(data)));
+        result.Entries[entryIndex][field.name] = dataView.read(offset, field.type);
         offset += field.size;
       }
     }
@@ -45,7 +45,7 @@ class CurParser {
 }
 
 /**
- * Result from the CUR parser.
+ * Result from the CurParser.
  */
 class CurParserResult {
   Entries = [];

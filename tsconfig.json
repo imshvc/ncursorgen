@@ -1,6 +1,6 @@
 {
   "compileOnSave": false,
-  "include": ["src/**/*"],
+  "include": ["src/**/*", "tests/**/*"],
   "compilerOptions": {
     "outDir": "./build",
     "baseUrl": "./src",

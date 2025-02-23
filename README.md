@@ -23,3 +23,4 @@ An alternative to xcursorgen - build cursors for Linux and Windows platforms.
 15. https://www.fileformat.info/format/bmp/index.dir
 16. https://www.fileformat.info/format/bmp/egff.htm
 17. https://gitlab.freedesktop.org/xorg/lib/libxcursor
+18. https://learn.microsoft.com/en-us/windows/win32/gdi/bitmap-structures

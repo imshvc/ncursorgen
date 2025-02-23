@@ -6,19 +6,21 @@
  */
 
 /**
- * Windows Bitmap Parser
+ * Windows Bitmap Parser.
  */
 class BmpParser {
   /**
-   * Parse bitmap from bytes.
-   * @param {string} bytes Raw file bytes.
+   * Parse bitmap.
+   * @param {DataViewExt} dataView Raw file bytes.
    * @returns {BmpParserResult}
    */
-  parse(bytes) {
+  parse(dataView) {
+    dataView.littleEndian();
+
     /**
      * Not a bitmap file.
      */
-    if (this.valid(bytes) === false) {
+    if (this.valid(dataView) === false) {
       return false;
     }
 
@@ -29,8 +31,7 @@ class BmpParser {
      * Parse file header.
      */
     for (let field of BmpStructure.FileHeader) {
-      let data = substr(bytes, offset, field.size);
-      result.FileHeader[field.name] = hexdec(hexreverse(bin2hex(data)));
+      result.FileHeader[field.name] = dataView.read(offset, field.type);
       offset += field.size;
     }
 
@@ -38,8 +39,7 @@ class BmpParser {
      * Parse info header.
      */
     for (let field of BmpStructure.InfoHeader) {
-      let data = substr(bytes, offset, field.size);
-      result.InfoHeader[field.name] = hexdec(hexreverse(bin2hex(data)));
+      result.InfoHeader[field.name] = dataView.read(offset, field.type);
       offset += field.size;
     }
 
@@ -48,15 +48,17 @@ class BmpParser {
 
   /**
    * Check for the magic 'BM' that indicates a valid BMP file.
+   * @param {DataView} dataView Raw file bytes.
    * @returns {boolean}
    */
-  valid(bytes) {
-    return bytes.length >= 2 && substr(bytes, 0, 2).toUpperCase() === 'BM';
+  valid(dataView) {
+    console.log(dataView.read(0, 'Uint16'));
+    return dataView.read(0, 'Uint16') === 0x4D42;
   }
 }
 
 /**
- * Result from the BMP parser.
+ * Result from the BmpParser.
  */
 class BmpParserResult {
   FileHeader = {};
