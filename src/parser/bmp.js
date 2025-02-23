@@ -52,7 +52,6 @@ class BmpParser {
    * @returns {boolean}
    */
   valid(dataView) {
-    console.log(dataView.read(0, 'Uint16'));
     return dataView.read(0, 'Uint16') === 0x4D42;
   }
 }
